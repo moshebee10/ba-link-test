@@ -1,0 +1,6 @@
+.accordion-body {
+    cursor: pointer;
+}
+.accordion-body:hover {
+    background-color: rgb(234, 234, 241);
+}
