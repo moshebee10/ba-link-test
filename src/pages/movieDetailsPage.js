@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './movieDetailsPage.css';
 import { useLocation } from 'react-router-dom';
-import { getMovieImages } from './api';
+import { getMovieImages } from '../api';
 
 
 function MovieDetailsPage() {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './mainPage.css';
-import { getData } from './api';
-import MoviesListInfo from './moviesListInfo';
+import { getData } from '../api';
+import MoviesListInfo from '../components/moviesListInfo';
 import {
     Form,
     FormGroup,

@@ -1,8 +1,8 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MainPage from './mainPage';
-import MovieDetailsPage from './movieDetailsPage';
+import MainPage from './pages/mainPage';
+import MovieDetailsPage from './pages/movieDetailsPage';
 
 function App() {
   return (
