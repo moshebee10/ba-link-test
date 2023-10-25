@@ -8,6 +8,7 @@ import {
     AccordionItem,
 } from 'reactstrap';
 
+
 function MoviesListInfo(props) {
 
     const navigate = useNavigate();
@@ -20,7 +21,7 @@ function MoviesListInfo(props) {
         );
     }
 
-    const toggle = (id) => {
+    const toggle = async (id) => {
         if (open === id) {
             setOpen('');
         } else {

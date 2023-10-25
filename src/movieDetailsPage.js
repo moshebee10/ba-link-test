@@ -21,11 +21,13 @@ function MovieDetailsPage() {
     }, [state])
 
     return (
-        <div className='movie-details-main'>
-                {str && <img
-                    src={`https://image.tmdb.org/t/p/w500/${str}`}
-                    alt='movie-img'
-                />}
+        <div
+            className='movie-details-main'
+            style={{
+                backgroundImage: str ?
+                    `url(${`https://image.tmdb.org/t/p/w500/${str}`})` : ''
+            }}
+        >
         </div>
     );
 }

@@ -41,3 +41,21 @@ export async function getMovieImages(movieId) {
 
     return data;
 }
+
+export async function getMovieDetails(movieId) {
+    const options = {
+        method: 'GET',
+        headers
+    };
+
+    const data = fetch(
+        `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`,
+        options
+    )
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.error(err));
+
+    return data;
+}
