@@ -5,6 +5,24 @@ const headers = {
     Authorization: `Bearer ${API_READ_ACCESS_TOKEN}`
 }
 
+export async function getData2(url) {
+    const options = {
+        method: 'GET',
+        headers
+    };
+
+    const data = await fetch(
+        url,
+        options
+    )
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.error(err));
+
+    return data;
+}
+
 export async function getData() {
 
     const options = {

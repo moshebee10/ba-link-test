@@ -1,6 +1,12 @@
 .accordion-body {
     cursor: pointer;
+    display: flex;
 }
 .accordion-body:hover {
     background-color: rgb(234, 234, 241);
+}
+.movie-name {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-family: cursive;
 }

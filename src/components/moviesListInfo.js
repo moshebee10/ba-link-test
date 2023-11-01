@@ -38,6 +38,9 @@ function MoviesListInfo(props) {
                             key={`MovieInfoCell-${i}`}
                         >
                             <AccordionHeader targetId={`${i + 1}`}>
+                                <span className='movie-name'>
+                                    {'Movie name:' + '\xa0'}
+                                </span>
                                 <h6>{elm.title}</h6>
                             </AccordionHeader>
                             <AccordionBody
@@ -45,7 +48,10 @@ function MoviesListInfo(props) {
                                 className='accordion-body'
                                 onClick={() => cellOnClick(elm)}
                             >
-                                {elm.overview}
+                                <div>
+                                    <div>{`release date:\xa0${elm.release_date}`}</div>
+                                    <div>{`popularity:\xa0${elm.popularity}`}</div>
+                                </div>
                             </AccordionBody>
                         </AccordionItem>
                     )
