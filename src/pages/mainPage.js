@@ -57,9 +57,10 @@ function MainPage() {
                     </Col>
                 </FormGroup>
             </Form>
-            <MoviesListInfo
-                data={filterMovies}
-            />
+            {filterMovies.length > 0 &&
+                <MoviesListInfo
+                    data={filterMovies}
+                />}
         </div>
     );
 }

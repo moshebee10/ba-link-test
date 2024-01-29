@@ -13,7 +13,7 @@ ba-link-test is a simple React project that runs locally on your computer.
 4. Download the ZIP file or use Git to clone the project:
 
    ```shell
-   git clone https://github.com/yourusername/my-react-app.git
+   git clone https://github.com/moshebee10/ba-link-test
 
    cd ba-link-test
    npm install

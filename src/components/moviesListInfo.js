@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './moviesListInfo.css';
 import {
@@ -13,6 +13,13 @@ function MoviesListInfo(props) {
 
     const navigate = useNavigate();
     const [open, setOpen] = useState('1');
+    // const [isOpen, setIOsOpen] = useState(true);
+    const [currentMovie, setCurrentMovie] = useState({});
+    // console.log(currentMovie);
+
+    useEffect(() => {
+        setCurrentMovie(props.data[0])
+    }, [props.data]);
 
     let cellOnClick = (elm) => {
         navigate(
@@ -22,20 +29,34 @@ function MoviesListInfo(props) {
     }
 
     const toggle = async (id) => {
+        // console.log(id);
+        let realId = parseInt(id) - 1;
+        console.log(props.data[realId]);
         if (open === id) {
+            // console.log('close');
             setOpen('');
+            // setIOsOpen(false);
         } else {
             setOpen(id);
+            // console.log('open');
+            // setIOsOpen(true);
         }
     };
 
     return (
         <div>
-            <Accordion open={open} toggle={toggle}>
+            <Accordion
+                open={open}
+                toggle={toggle}
+            >
                 {props.data.map((elm, i) => {
                     return (
                         <AccordionItem
+                            onClick={(e) => {
+                                // console.log(isOpen);
+                            }}
                             key={`MovieInfoCell-${i}`}
+                        // id={elm.id}
                         >
                             <AccordionHeader targetId={`${i + 1}`}>
                                 <span className='movie-name'>

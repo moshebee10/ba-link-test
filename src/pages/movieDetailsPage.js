@@ -55,20 +55,24 @@ function MovieDetailsPage() {
             let sentence = words.slice(i, i + sentenceLength).join(" ");
             sentences.push(sentence);
         }
-        var aText = sentences
+        let aText = sentences
+        let iSpeed = 100; // time delay of print out
+        let iIndex = 0; // start printing array at this posision
+        let iArrLength = aText[0].length; // the length of the text array
+        let iScrollAt = 20; // start scrolling up at this many lines
 
-        var iSpeed = 100; // time delay of print out
-        var iIndex = 0; // start printing array at this posision
-        var iArrLength = aText[0].length; // the length of the text array
-        var iScrollAt = 5; // start scrolling up at this many lines
-
-        var iTextPos = 0; // initialise text position
-        var sContents = ''; // initialise contents variable
-        var iRow; // initialise current row 
+        let iTextPos = 0; // initialise text position
+        let sContents = ''; // initialise contents letiable
+        let iRow; // initialise current row 
         let typewriter = () => {
             sContents = ' ';
             iRow = Math.max(0, iIndex - iScrollAt);
-            var destination = document.getElementById("typedtext");
+            let destination = document.getElementById("typedtext");
+            if (iIndex > 4) {
+                destination.scroll({
+                    top: 200
+                })
+            }
             if (destination) {
                 while (iRow < iIndex) {
                     sContents += aText[iRow++] + '<br />';
@@ -83,12 +87,6 @@ function MovieDetailsPage() {
                     }
                 } else {
                     setTimeout(typewriter, iSpeed);
-                }
-                console.log(iRow);
-                if (iRow > 4) {
-                    // destination.scroll({
-                    //     top: 100
-                    // })
                 }
             }
         }
